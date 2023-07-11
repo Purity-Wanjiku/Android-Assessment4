@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">anitab-api-products</string>
+    <string name="price">Price</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="category">Category</string>
 </resources>

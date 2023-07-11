@@ -16,7 +16,7 @@
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat"
+            android:theme="@style/AppTheme.Light"
             android:exported="true"
             android:label="anitab-api-products">
             <intent-filter>
