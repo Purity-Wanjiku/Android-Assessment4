@@ -1,17 +1,17 @@
-package com.example.anitab_api_products
+package com.example.assessment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.anitab_api_products.databinding.ProductlistBinding
+import com.example.assessment.databinding.ProductlistBinding
 import com.squareup.picasso.Picasso
 
 class ProductAdapter (val products: List<Product>): RecyclerView.Adapter<ProductViewHolder> (){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        var binding = ProductlistBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = ProductlistBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ProductViewHolder(binding)
-
+//function is responsible for inflating the layout for each item in the RecyclerView.
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
@@ -20,7 +20,7 @@ class ProductAdapter (val products: List<Product>): RecyclerView.Adapter<Product
         binding.tvTitle.text = product.title
         binding.tvdescription.text = product.description
         binding.tvPrice.text = product.price.toString()
-
+//function is called for each item in the RecyclerView and is responsible for binding the data to the views inside the ViewHolder
         Picasso.get().load(product.thumbnail).into(binding.ivProductImage)
 //        Picasso.get().load(data.thumbnail).into(binding.ivProductImage)
         // Bind the data to the views inside the view holder
@@ -32,7 +32,7 @@ class ProductAdapter (val products: List<Product>): RecyclerView.Adapter<Product
     }
 
 }
-class ProductViewHolder(var binding: ProductlistBinding) : RecyclerView.ViewHolder(binding.root) {
+class ProductViewHolder(var binding:ProductlistBinding) : RecyclerView.ViewHolder(binding.root) {
 
     // Declare the views inside the card_product.xml layout
     // Example: val titleTextView: TextView = itemView.findViewById(R.id.titleTextView)

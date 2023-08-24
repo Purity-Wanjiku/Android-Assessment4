@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "anitab-api-products"
 include ':app'
+

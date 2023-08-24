@@ -1,4 +1,4 @@
-package com.example.anitab_api_products.ui.theme
+package com.example.assessment.ui.theme
 
 import android.app.Activity
 import android.os.Build

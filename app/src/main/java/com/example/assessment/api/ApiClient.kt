@@ -1,11 +1,11 @@
-package com.example.anitab_api_products
+package com.example.assessment.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
     var retrofit = Retrofit.Builder()
-                   .baseUrl("https://dummyjson.com")
+                   .baseUrl("https://jsonplaceholder.typicode.com/posts")
                    .addConverterFactory(GsonConverterFactory.create())
                    .build()
 

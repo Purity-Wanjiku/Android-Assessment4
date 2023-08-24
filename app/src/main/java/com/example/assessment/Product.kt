@@ -1,4 +1,4 @@
-package com.example.anitab_api_products
+package com.example.assessment
 
 data class Product(
     var id:Int,

@@ -10,14 +10,14 @@
         android:id="@+id/tvTitle"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/title"
         android:layout_marginStart="4dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/title"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivProductImage"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="NotSibling" />
 
     <TextView
@@ -27,6 +27,7 @@
         android:layout_marginTop="10dp"
         android:text="@string/description"
         android:textSize="10sp"
+        android:layout_marginStart="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.065"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,34 +39,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Price"
+        android:text="Body"
         android:textSize="10sp"
+        android:layout_marginStart="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.041"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvdescription" />
 
-    <ImageView
-        android:id="@+id/ivProductImage"
-        android:layout_width="130dp"
-        android:layout_height="140dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cvView"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPrice" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
