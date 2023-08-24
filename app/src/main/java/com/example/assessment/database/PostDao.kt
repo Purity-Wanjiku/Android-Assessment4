@@ -9,9 +9,9 @@ import retrofit2.http.Query
 
 @Dao
 interface PostDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertPosts(posts: List<PostEntity>)
     @Query("SELECT * FROM posts")
     fun getAllPosts(): LiveData<List<PostEntity>>
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertPosts(posts: List<PostEntity>)
 }

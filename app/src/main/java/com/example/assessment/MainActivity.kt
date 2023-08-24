@@ -1,39 +1,39 @@
 package com.example.assessment
 
-import com.example.`assessment-4`.databinding.ActivityMainBinding
-
--4
-
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
-import com.example.assessment.api.ApiClient
-import com.example.assessment.api.ApiInterface
-import com.example.assessment.databinding.ActivityMainBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+
+    private lateinit var postViewModel: PostViewModel
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var postAdapter: PostAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-    }
+        setContentView(R.layout.activity_main)
 
-    override fun onResume(){
-        super.onResume()
-//        fetchProduct()
-    }
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        postAdapter = PostAdapter(emptyList()) // Initialize with empty list
+        recyclerView.adapter = postAdapter
 
+        val postDao = AppDatabase.getDatabase(this).postDao()
+        val repository = PostRepository(postDao)
+        postViewModel = ViewModelProvider(this, PostViewModelFactory(repository)).get(PostViewModel::class.java)
+
+        postViewModel.posts.observe(this, { posts ->
+            postAdapter.updateData(posts)
+        })
+
+        GlobalScope.launch(Dispatchers.IO) {
+            postViewModel.refreshPosts()
+        }
+    }
 }
-
-
-
-
-
-
-
-
