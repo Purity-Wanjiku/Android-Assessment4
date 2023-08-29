@@ -18,7 +18,7 @@ android:supportsRtl="true"
 android:theme="@style/AppTheme.Light"
 tools:targetApi="31">
 <activity
-    android:name="com.example.assessment.MainActivity"
+    android:name="com.example.assessment.ui.MainActivity"
     android:theme="@style/AppTheme.Light"
     android:exported="true"
     android:label="@string/assessment">

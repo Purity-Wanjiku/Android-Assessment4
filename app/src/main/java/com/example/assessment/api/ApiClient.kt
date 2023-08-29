@@ -1,4 +1,4 @@
-package com.example.assessment
+package com.example.assessment.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ApiClient {
 
     var retrofit = Retrofit.Builder()
-        .baseUrl("https://jsonplaceholder.typicode.com/posts")
+        .baseUrl("https://jsonplaceholder.typicode.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
